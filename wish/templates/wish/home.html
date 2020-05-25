@@ -1,9 +1,20 @@
-<h1>hello</h1>
+{% extends 'wish/base.html' %}
 
+{% block content %}
+
+{% load static %}
+
+
+<h3 class="textcenter">
 {{ wishes.wish_title }}
+</h3>
+<br>
 
-<img src="{{ wishes.pic.url }}">
-
-{{ wishes.wish_description }}
+<img src="{{ wishes.pic.url }}" alt="wish" class="center">
+<br>
+<div>
+{{ wishes.wish_description|safe }}
+</div>
+{% endblock %}
 
 
